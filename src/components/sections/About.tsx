@@ -42,7 +42,7 @@ export function About() {
                         <h2 className="text-3xl md:text-4xl font-semibold mb-4">
                             About <span className="accent-text">Me</span>
                         </h2>
-                        <div className="h-1 w-16 accent-bg rounded-full" />
+                        <div className="h-1 w-16 accent-bg rounded-full mb-4" />
                     </div>
 
                     <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
@@ -80,16 +80,17 @@ export function About() {
                             {highlights.map(({ icon: Icon, label, desc }) => (
                                 <div
                                     key={label}
-                                    className="rounded-2xl border border-border/80 bg-card/90 p-5"
+                                    className="rounded-2xl border border-border/80 bg-card/90 p-5 flex items-start gap-4 transition hover:shadow-md hover:border-primary/40"
                                 >
-                                    <div className="flex items-start gap-3">
-                                        <div className="rounded-lg border border-border/70 bg-muted/50 p-2.5">
-                                            <Icon className="w-4 h-4 text-primary" />
-                                        </div>
-                                        <div>
-                                            <p className="font-medium mb-1">{label}</p>
-                                            <p className="text-sm text-muted-foreground">{desc}</p>
-                                        </div>
+                                    <div className="rounded-lg border border-border/70 bg-muted/50 p-2.5 shrink-0">
+                                        <Icon className="w-4 h-4 text-primary" />
+                                    </div>
+
+                                    <div className="flex-1">
+                                        <p className="font-medium mb-1">{label}</p>
+                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                            {desc}
+                                        </p>
                                     </div>
                                 </div>
                             ))}

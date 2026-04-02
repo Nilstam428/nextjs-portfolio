@@ -1,13 +1,13 @@
 export const siteConfig = {
-    name: "Nilesh",
-    title: "Nilesh | AI & Full Stack Developer",
+    name: "Nilesh Tamboli",
+    title: "Nilesh | Data Science Engineer & Full Stack Developer",
     description:
-        "Portfolio showcasing projects in AI, ML, and SaaS. Building intelligent products with modern tech.",
-    url: "https://nilesh.dev",
+        "Portfolio showcasing projects in AI, ML, and Software Engineering. Building intelligent products with modern tech.",
+    url: "https://nilstam428.github.io",
     links: {
-        github: "https://github.com/nilesh",
-        linkedin: "https://linkedin.com/in/nilesh",
-        email: "mailto:nilesh@example.com",
+        github: "https://github.com/Nilstam428",
+        linkedin: "https://www.linkedin.com/in/nileshtamboli/",
+        email: "mailto:nileshtamboli428@gmail.com",
     },
 };
 

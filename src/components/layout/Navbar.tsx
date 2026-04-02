@@ -28,27 +28,27 @@ export function Navbar() {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 scrolled
-                    ? "glass border-b border-border/70"
+                    ? "backdrop-blur-xl bg-background/60 border-b border-border/50 shadow-sm"
                     : "bg-transparent"
             )}
         >
-            <Container>
-                <nav className="flex items-center justify-between h-16">
+            <Container className="py-3">
+                <nav className="flex items-center justify-between h-14">
                     {/* Logo */}
                     <Link
                         href="/"
-                        className="text-xl font-semibold tracking-tight"
+                        className="text-xl tracking-tight flex-1"
                     >
-                        Nilesh<span className="accent-text">/dev</span>
+                        <span className="font-bold">Nilesh</span> <span className="opacity-80">Tamboli</span>
                     </Link>
 
                     {/* Desktop nav links */}
-                    <div className="hidden md:flex items-center gap-2 rounded-full border border-border/70 bg-card/75 px-2 py-1">
+                    <div className="hidden md:flex flex-initial items-center gap-2 rounded-full border border-border/50 bg-background/50 backdrop-blur-md px-6 py-2">
                         {navLinks.map((link) => (
                             <a
                                 key={link.href}
                                 href={link.href}
-                                className="rounded-full px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-colors"
+                                className="rounded-full px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-colors"
                             >
                                 {link.label}
                             </a>
@@ -106,7 +106,7 @@ export function Navbar() {
                         transition={{ duration: 0.3 }}
                         className="md:hidden glass border-t border-border/50"
                     >
-                        <div className="content-shell flex flex-col py-4 gap-2">
+                        <div className="content-shell flex flex-col py-4 my-2 gap-2">
                             {navLinks.map((link, i) => (
                                 <motion.a
                                     key={link.href}

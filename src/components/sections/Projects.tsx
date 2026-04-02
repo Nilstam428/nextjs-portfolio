@@ -69,19 +69,16 @@ export function Projects({ mode = "featured" }: ProjectsProps) {
                         className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
                     >
                         {visibleProjects.map((project) => (
-                            <motion.div key={project.slug} variants={cardVariants}>
+                            <motion.div
+                                key={project.slug}
+                                variants={cardVariants}
+                                whileHover={{ y: -5 }}
+                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                            >
                                 <Card gradient hover className="h-full flex flex-col overflow-hidden">
                                     {/* Card top panel */}
                                     <CardHeader className="mb-1">
-                                        <div className="w-full rounded-xl border border-border/70 bg-muted/35 p-4 mb-4">
-                                            <p className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground mb-2">
-                                                Case Study
-                                            </p>
-                                            <Badge variant="outline" className="text-[11px]">
-                                                {project.tags[0]}
-                                            </Badge>
-                                        </div>
-                                        <h3 className="text-xl font-semibold leading-tight">{project.title}</h3>
+                                        <h3 className="text-xl font-semibold leading-tight mt-2">{project.title}</h3>
                                     </CardHeader>
 
                                     <CardContent className="flex-1">

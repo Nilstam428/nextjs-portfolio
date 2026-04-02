@@ -6,15 +6,7 @@ import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { siteConfig } from "@/lib/constants";
-
-const heroTechStack = [
-    "Next.js",
-    "TypeScript",
-    "Python",
-    "PostgreSQL",
-    "AWS",
-    "Docker",
-];
+import { skills } from "@/data/skills";
 
 const quickFacts = [
     { label: "Experience", value: "3+ years" },
@@ -84,64 +76,57 @@ export function Hero() {
                             practical solutions.
                         </motion.p>
 
-                        <motion.div
-                            variants={itemVariants}
-                            className="flex flex-wrap gap-3 mb-8"
-                        >
-                            <a href="#projects">
-                                <Button variant="primary" size="lg">
-                                    View Projects
-                                    <ArrowRight className="w-4 h-4" />
-                                </Button>
-                            </a>
-                            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                                <Button variant="outline" size="lg">
-                                    <Download className="w-4 h-4" />
-                                    Resume
-                                </Button>
-                            </a>
-                        </motion.div>
+                        <motion.div variants={itemVariants} className="flex flex-col gap-6 mb-8 mt-6">
+                            <div className="flex flex-wrap gap-4">
+                                <a href="#projects">
+                                    <Button variant="primary" size="lg">
+                                        View Projects
+                                        <ArrowRight className="w-4 h-4 ml-2" />
+                                    </Button>
+                                </a>
+                                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                                    <Button variant="outline" size="lg">
+                                        <Download className="w-4 h-4 mr-2" />
+                                        Resume
+                                    </Button>
+                                </a>
+                            </div>
 
-                        <motion.div
-                            variants={itemVariants}
-                            className="flex flex-wrap items-center gap-3 mb-8"
-                        >
-                            <a
-                                href={siteConfig.links.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:border-primary/40"
-                            >
-                                <Github className="w-4 h-4" />
-                                GitHub
-                            </a>
-                            <a
-                                href={siteConfig.links.linkedin}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:border-primary/40"
-                            >
-                                <Linkedin className="w-4 h-4" />
-                                LinkedIn
-                            </a>
-                            <a
-                                href={siteConfig.links.email}
-                                className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:border-primary/40"
-                            >
-                                <Mail className="w-4 h-4" />
-                                Email
-                            </a>
-                        </motion.div>
+                            <div className="flex flex-wrap items-center gap-3">
+                                <a
+                                    href={siteConfig.links.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:border-primary/40"
+                                >
+                                    <Github className="w-4 h-4" />
+                                    GitHub
+                                </a>
+                                <a
+                                    href={siteConfig.links.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:border-primary/40"
+                                >
+                                    <Linkedin className="w-4 h-4" />
+                                    LinkedIn
+                                </a>
+                                <a
+                                    href={siteConfig.links.email}
+                                    className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:border-primary/40"
+                                >
+                                    <Mail className="w-4 h-4" />
+                                    Email
+                                </a>
+                            </div>
 
-                        <motion.div
-                            variants={itemVariants}
-                            className="flex flex-wrap gap-2"
-                        >
-                            {heroTechStack.map((tech) => (
-                                <Badge key={tech} variant="default">
-                                    {tech}
-                                </Badge>
-                            ))}
+                            <div className="flex flex-wrap gap-2">
+                                {skills.slice(0, 6).map((skill) => (
+                                    <Badge key={skill.name} variant="default">
+                                        {skill.name}
+                                    </Badge>
+                                ))}
+                            </div>
                         </motion.div>
                     </div>
 
@@ -152,11 +137,11 @@ export function Hero() {
                         <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-4">
                             Quick Snapshot
                         </p>
-                        <div className="space-y-4">
+                        <div className="mt-4">
                             {quickFacts.map((fact) => (
                                 <div
                                     key={fact.label}
-                                    className="rounded-xl border border-border/70 bg-muted/35 px-4 py-3"
+                                    className="rounded-xl border border-border/70 bg-muted/35 px-4 py-3 mb-4 last:mb-0"
                                 >
                                     <p className="text-xs uppercase tracking-wide text-muted-foreground">
                                         {fact.label}

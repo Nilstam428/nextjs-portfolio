@@ -3,6 +3,7 @@ import { Manrope, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 import "@/styles/globals.css";
 
 const manrope = Manrope({
@@ -70,6 +71,7 @@ export default function RootLayout({
         className={`${manrope.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
       >
         <ThemeProvider>
+          <CustomCursor />
           <Navbar />
           <main className="min-h-screen pt-16">{children}</main>
           <Footer />

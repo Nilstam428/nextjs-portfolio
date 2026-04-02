@@ -48,9 +48,11 @@ export function TechStack() {
 
                     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                         {groupedSkills.map((group) => (
-                            <div
+                            <motion.div
                                 key={group.category}
-                                className="rounded-2xl border border-border/80 bg-card/90 p-5"
+                                whileHover={{ y: -4 }}
+                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                className="rounded-2xl border border-border/80 bg-card/90 p-5 h-full flex flex-col hover:border-primary/50 transition-colors shadow-sm"
                             >
                                 <p className="text-sm font-semibold mb-3">
                                     {categoryTitle[group.category] ?? group.category}
@@ -62,7 +64,7 @@ export function TechStack() {
                                         </Badge>
                                     ))}
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </motion.div>
